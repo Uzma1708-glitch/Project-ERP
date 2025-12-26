@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher Feedback | KL ERP</title>
+  <style>
+    :root {
+      --primary: #1924a1;
+      --primary-dark: #080f56;
+      --light-bg: #e6f7f9;
+      --white: #ffffff;
+      --text: #05030c;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: var(--light-bg);
+      color: var(--text);
+    }
+
+    .topbar {
+      background: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      padding: 8px 20px;
+    }
+
+    .topbar img {
+      width: 60px;
+      height: 52px;
+      margin-right: 12px;
+    }
+
+    .topbar h2 {
+      color: var(--white);
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .wrapper {
+      display: flex;
+      min-height: calc(100vh - 68px);
+    }
+
+    .sidebar {
+      width: 200px;
+      background: var(--primary);
+      padding: 20px 0;
+      color: #ffffff;
+    }
+
+    .sidebar a {
+      display: block;
+      color: var(--white);
+      text-decoration: none;
+      padding: 12px 24px;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+
+    .sidebar a:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .main {
+      flex: 1;
+      padding: 30px;
+    }
+
+    h2 {
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+    }
+
+    /* Teacher button */
+    .teacher-header {
+      background: var(--white);
+      border: 2px solid var(--primary-dark);
+      border-radius: 8px;
+      padding: 15px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .teacher-header:hover {
+      background: rgba(25, 36, 161, 0.1);
+    }
+
+    /* Hidden section */
+    .feedback-section {
+      display: none;
+      background: var(--white);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button {
+      background: var(--primary-dark);
+      color: var(--white);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: var(--primary);
+    }
+
+    .success {
+      color: green;
+      font-size: 14px;
+      margin-top: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <img src="AUREVIE LOGO.png" alt="KL Logo" />
+    <h2>AUREVIA UNIVERSITY</h2>
+  </div>
+
+  <div class="wrapper">
+    <nav class="sidebar">
+      <a href="profile.html">Profile</a><hr />
+      <a href="academicregestration.html">Academic Registration</a><hr />
+      <a href="stu.html">Attendance</a><hr />
+      <a href="courses.html">Courses</a><hr />
+      <a href="feepayments.html">Fee Payments</a><hr />
+      <a href="results.html">Results</a><hr />
+      <a href="timetable.html">Time-Table</a><hr />
+      <a href="feedback.html" style="background: rgba(255,255,255,0.2);">Feedback</a><hr />
+      <a href="conversate.html">Conversate</a><hr>
+      <a href="logout.html">Logout</a><hr />
+    </nav>
+    <main class="main">
+      <h2>Teacher Feedback</h2>
+      <div class="teacher">
+        <div class="teacher-header" onclick="toggleFeedback(this)">
+          Dr. Anjali Sharma (Mathematics)
+        </div>
+        <div class="feedback-section">
+          <label>1. How well does the teacher explain the topics?</label>
+          <select>
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Average</option>
+            <option>Poor</option>
+          </select>
+
+          <label>2. Does the teacher solve questions in class?</label>
+          <select>
+            <option>Always</option>
+            <option>Sometimes</option>
+            <option>Rarely</option>
+          </select>
+
+          <label>3. How approachable is the teacher?</label>
+          <select>
+            <option>Very approachable</option>
+            <option>Moderately approachable</option>
+            <option>Not approachable</option>
+          </select>
+
+          <label>4. Overall satisfaction?</label>
+          <select>
+            <option>Highly satisfied</option>
+            <option>Satisfied</option>
+            <option>Neutral</option>
+            <option>Unsatisfied</option>
+          </select>
+
+          <button onclick="submitFeedback(this)">Submit Feedback</button>
+          <div class="success">Feedback submitted successfully ✅</div>
+        </div>
+      </div>
+      <div class="teacher">
+        <div class="teacher-header" onclick="toggleFeedback(this)">
+          Mr. Ravi Kumar (Computer Science)
+        </div>
+        <div class="feedback-section">
+          <label>1. How well does the teacher explain the topics?</label>
+          <select>
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Average</option>
+            <option>Poor</option>
+          </select>
+
+          <label>2. Does the teacher solve questions in class?</label>
+          <select>
+            <option>Always</option>
+            <option>Sometimes</option>
+            <option>Rarely</option>
+          </select>
+
+          <label>3. How approachable is the teacher?</label>
+          <select>
+            <option>Very approachable</option>
+            <option>Moderately approachable</option>
+            <option>Not approachable</option>
+          </select>
+
+          <label>4. Overall satisfaction?</label>
+          <select>
+            <option>Highly satisfied</option>
+            <option>Satisfied</option>
+            <option>Neutral</option>
+            <option>Unsatisfied</option>
+          </select>
+
+          <button onclick="submitFeedback(this)">Submit Feedback</button>
+          <div class="success">Feedback submitted successfully ✅</div>
+        </div>
+      </div>
+
+      <!-- Teacher 3 -->
+      <div class="teacher">
+        <div class="teacher-header" onclick="toggleFeedback(this)">
+          Ms. Priya Menon (Physics)
+        </div>
+        <div class="feedback-section">
+          <label>1. How well does the teacher explain the topics?</label>
+          <select>
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Average</option>
+            <option>Poor</option>
+          </select>
+
+          <label>2. Does the teacher solve questions in class?</label>
+          <select>
+            <option>Always</option>
+            <option>Sometimes</option>
+            <option>Rarely</option>
+          </select>
+
+          <label>3. How approachable is the teacher?</label>
+          <select>
+            <option>Very approachable</option>
+            <option>Moderately approachable</option>
+            <option>Not approachable</option>
+          </select>
+
+          <label>4. Overall satisfaction?</label>
+          <select>
+            <option>Highly satisfied</option>
+            <option>Satisfied</option>
+            <option>Neutral</option>
+            <option>Unsatisfied</option>
+          </select>
+
+          <button onclick="submitFeedback(this)">Submit Feedback</button>
+          <div class="success">Feedback submitted successfully ✅</div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function toggleFeedback(element) {
+      const section = element.nextElementSibling;
+      section.style.display =
+        section.style.display === "block" ? "none" : "block";
+    }
+
+    function submitFeedback(button) {
+      const msg = button.nextElementSibling;
+      msg.style.display = "block";
+      setTimeout(() => (msg.style.display = "none"), 2000);
+    }
+  </script>
+</body>
+</html>

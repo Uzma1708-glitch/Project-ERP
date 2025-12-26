@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational ERP Admin Portal - Customizations</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<style>
+   
+    :root {
+        --primary-dark: #1f3f6c; 
+        --secondary-dark: #0d1e4c; 
+        --accent-blue: #007bff; 
+        --bg-light: #f5f8ff; 
+        --card-bg: #ffffff; 
+        --border-color: #dee2e6;
+        --danger-red: #dc3545; 
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+    }
+
+    body {
+        background-color: var(--bg-light);
+    }
+
+    
+    .logo-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 90px;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        background-color: var(--card-bg);
+    }
+    .logo-navbar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;  
+        display: block;       
+    }
+
+
+    .parent_leftmenu {
+        position: fixed;
+        top: 90px;
+        left: 0;
+        width: 250px;
+        height: calc(100vh - 90px);
+        background-color: var(--primary-dark); 
+        display: flex;
+        flex-direction: column;
+        padding-top: 15px;
+        z-index: 900;
+        box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+    }
+    .menu li {
+        list-style: none;
+        padding: 14px 25px;
+        margin: 5px 0;
+        border-left: 4px solid transparent;
+        transition: all 0.3s ease;
+    }
+    .menu li:hover {
+        background-color: rgba(255,255,255,0.15); 
+        border-left: 4px solid var(--accent-blue);
+    }
+ 
+    .menu li.active {
+        background-color: rgba(255,255,255,0.15); 
+        border-left: 4px solid var(--accent-blue);
+    }
+    .menu a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+   
+    .parent_body {
+        margin-left: 250px; 
+        margin-top: 90px; 
+        padding: 40px;
+        min-height: calc(100vh - 90px);
+        width: calc(100% - 250px);
+    }
+    .parent-header {
+        font-weight: 700;
+        font-size: 36px; 
+        color: var(--secondary-dark);
+        margin-bottom: 35px; 
+        text-align: left;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--border-color);
+    }
+    .parent-header p {
+        color: var(--secondary-dark);
+        text-align: left;
+    }
+
+    .settings-card {
+        background-color: var(--card-bg);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        max-width: 700px; 
+        margin-top: 30px;
+    }
+    
+    .setting-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px dashed var(--border-color);
+    }
+    .setting-group:last-child {
+        border-bottom: none;
+    }
+    .setting-group label {
+        font-size: 16px;
+        font-weight: 600;
+        color: #495057;
+        flex-grow: 1
+    }
+
+    
+    .action-button {
+        background-color: var(--primary-dark);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.1s;
+    }
+    .action-button:hover {
+        background-color: var(--accent-blue);
+    }
+    .action-button:active {
+        transform: scale(0.98);
+    }
+
+    .logout-button {
+        background-color: var(--danger-red);
+        text-decoration: none;
+    }
+    .logout-button a {
+        color: white;
+        text-decoration: none;
+    }
+    .logout-button:hover {
+        background-color: #c82333;
+    }
+
+   
+    .contact-links {
+        margin-top: 25px;
+        padding-top: 20px;
+        border-top: 1px dashed var(--border-color);
+    }
+    .contact-links label {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--secondary-dark);
+    }
+    .contact-links a {
+        text-decoration: none;
+        color: var(--accent-blue);
+        font-weight: 500;
+        margin-right: 20px;
+        padding: 8px 12px;
+        border-radius: 6px;
+        border: 1px solid var(--accent-blue);
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .contact-links a:hover {
+        background-color: var(--accent-blue);
+        color: white;
+    }
+
+  
+    @media (max-width: 768px) {
+        .parent_leftmenu {
+            width: 0;
+            display: none;
+        }
+
+        .parent_body {
+            margin-left: 0; 
+            padding: 20px;
+            width: 100%;
+        }
+
+        .parent-header {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+        
+        .settings-card {
+            padding: 20px;
+        }
+
+        .setting-group {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+    }
+</style>
+<body>
+    <div class="logo-slide">
+        <div class="logo-navbar">
+          
+            <img src="navbarr.jpg" 
+                 alt="Logo of AUREVIA UNIVERSITY" 
+                 onerror="this.onerror=null; this.src='https://placehold.co/1200x90/1f3f6c/ffffff?text=AUREVIA+UNIVERSITY+ERP';">
+        </div>
+        
+      
+        <div class="parent_leftmenu">
+            <nav class="menu">
+                <li><a href="Admin.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                <li><a href="student.html"><i class="fa-solid fa-user-graduate"></i> Students</a></li>
+                <li><a href="Marks.html"><i class="fa-solid fa-square-poll-vertical"></i> Marks</a></li>
+                <li><a href="Attendanc.html"><i class="fa-solid fa-calendar-check"></i> Attendance</a></li>
+                <li><a href="Syllabus.html"><i class="fa-solid fa-book-atlas"></i> Syllabus Mapping</a></li>
+        
+                <li class="active"><a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a></li> 
+            </nav>
+        </div>
+        
+  
+        <div class="parent_body">
+            <div class="parent-header">
+                <p>System & Profile Settings</p>
+            </div>
+            
+            <div class="settings-card">
+                
+       
+                <div class="setting-group">
+                    <label>Change Username of your Profile</label>
+                    
+                    <button class="action-button" onclick="showChangeUsernameModal()">Change Username</button>
+                </div>
+
+           
+                <div class="setting-group">
+                    <label>Change Password of your Profile</label>
+                    <button class="action-button" onclick="showChangePasswordModal()">Change Password</button>
+                </div>
+                
+           
+                <div class="setting-group">
+                    <label>Session Management</label>
+                    <button type="submit" class="action-button logout-button">
+                        <a href="logout.html">Logout</a>
+                    </button>
+                </div>
+                
+          
+                <div class="contact-links">
+                    <label>For any kind of Query You can reach out:</label>
+                    <a href="mailto:diddisai799@gmail.com" target="_blank">
+                        <i class="fa-solid fa-envelope"></i> Email Support
+                    </a>
+                    <a href="https://www.instagram.com/your_@diddisai_2408" target="_blank">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       
+        function showChangeUsernameModal() {
+            console.log("Action: Display modal/form to change username. Input fields for Current Username, New Username, and Confirmation needed.");
+           
+            alert("Change Username functionality launched. (Check console for next steps)");
+        }
+
+        function showChangePasswordModal() {
+            console.log("Action: Display modal/form to change password. Input fields for Current Password, New Password, and Confirmation needed.");
+          
+            alert("Change Password functionality launched. (Check console for next steps)");
+        }
+
+   
+        function alert(message) {
+            const body = document.querySelector('body');
+            const alertBox = document.createElement('div');
+            alertBox.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #fff;
+                color: #333;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                z-index: 10000;
+                font-family: 'Inter', sans-serif;
+                max-width: 300px;
+                text-align: center;
+            `;
+            alertBox.innerHTML = `
+                <p style="margin-bottom: 15px; font-weight: 600;">System Notification</p>
+                <p style="font-size: 14px;">${message}</p>
+                <button onclick="this.parentNode.remove()" 
+                        style="margin-top: 15px; background-color: var(--primary-dark); color: white; border: none; padding: 8px 15px; border-radius: 6px; cursor: pointer;">
+                    OK
+                </button>
+            `;
+            body.appendChild(alertBox);
+        }
+    </script>
+</body>
+</html>

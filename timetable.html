@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-Table | KL ERP</title>
+    <style>
+        :root {
+          --primary: #1924a1;
+            --primary-dark: #080f56;
+            --light-bg: #e6f7f9;
+            --white: #ffffff;
+            --text: #05030c;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background: var(--light-bg);
+            color: var(--text);
+        }
+        .topbar {
+            background: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            padding: 8px 20px;
+        }
+        .topbar img {
+            width: 60px;
+            height: 52px;
+            margin-right: 12px;
+        }
+        .topbar h2 {
+            color: var(--white);
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        .wrapper {
+            display: flex;
+            min-height: calc(100vh - 68px);
+        }
+        .sidebar {
+            width: 200px;
+            background: var(--primary);
+            padding: 20px 0;
+        }
+        .sidebar a {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 24px;
+            font-size: 15px;
+            transition: .2s;
+        }
+        .sidebar a:hover {
+            background: rgba(0, 0, 0, .1);
+        }
+        .main {
+            flex: 1;
+            padding: 30px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+        }
+        th, td {
+            padding: 12px 10px;
+            text-align: center;
+            border: 1px solid #cdecee;
+        }
+        th {
+            background: var(--primary-dark);
+            color: var(--white);
+        }
+        td {
+            background: #f5fdff;
+        }
+        tr:nth-child(even) td {
+            background: #e6f7f9;
+        }
+        .break {
+            background: #1f66d1 !important;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <img src="AUREVIE LOGO.png" alt="KL Logo">
+        <h2>AUREVIA UNIVERSITY&nbsp;·&nbsp; Student ERP</h2>
+    </div>
+
+    <div class="wrapper">
+        <nav class="sidebar">
+           <a href="profile.html">Profile</a><hr>
+            <a href="academicregestration.html">academic regestration</a><hr>
+            <a href="stu.html">Attendance</a><hr>
+            <a href="courses.html">courses</a><hr>
+        <a href="feepayments.html">fee payments</a><hr>
+            <a href="results.html">Results</a><hr>
+            <a href="timetable.html">Time-Table</a><hr>
+            <a href="feedback.html">Feedback</a><hr>
+            <a href="conversate.html">Conversate</a><hr>
+            <a href="logout.html">Logout</a><hr>
+        </nav>
+        <main class="main">
+            <h3 style="margin-bottom: 20px;">Class Time-Table (III Semester – CSE)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day / Time</th>
+                        <th>9:00 - 10:00</th>
+                        <th>10:00- 11:00</th>
+                        <th>11:00 - 12:00</th>
+                        <th>12:00 - 1:00</th>
+                        <th>1:00 - 2:00</th>
+                        <th>2:00 - 3:00</th>
+                        <th>3:00 - 4:00</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Monday</strong></td>
+                        <td>maths</td>
+                        <td>Digital Logic</td>
+                        <td>lse</td>
+                        <td class="break">Lunch</td>
+                        <td>c language</td>
+                        <td>java</td>
+                        <td>web development</td>
+                    </tr>
+                    <tr>
+                       <td><strong>tuesday</strong></td>
+                        <td>maths</td>
+                        <td>Digital Logic</td>
+                        <td>lse</td>
+                        <td class="break">Lunch</td>
+                        <td>java</td>
+                        <td>web development</td>
+                        <td>Library</td>
+                    </tr>
+                    <tr>
+                       <td><strong>wednesday</strong></td>
+                        <td>maths</td>
+                        <td>lse</td>
+                        <td>-</td>
+                        <td class="break">Lunch</td>
+                        <td>java</td>
+                        <td>web development</td>
+                        <td colspan="3">Soft-Skills / Club Activity</td>
+                    </tr>
+                    <tr>
+                        <td><strong>thursday</strong></td>
+                        <td>maths</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td class="break">Lunch</td>
+                        <td>c language</td>
+                        <td>java</td>
+                        <td>web development</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Friday</strong></td>
+                       <td><strong>Monday</strong></td>
+                       <td>-</td>
+                       <td>-</td>
+                        <td class="break">Lunch</td>
+                        <td>c language</td>
+                        <td>java</td>
+                        <td>web development</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+</html>

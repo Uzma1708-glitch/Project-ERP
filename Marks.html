@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational ERP Admin Portal - Marks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<style>
+    
+    :root {
+        --primary-dark: #0047ab; 
+        --secondary-dark: #0d1e4c; 
+        --accent-blue: #007bff; 
+        --bg-light: #eaf4ff;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+    }
+
+    body {
+        background-color: var(--bg-light);
+    }
+
+   
+    .logo-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 90px;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        background-color: #ffffff;
+    }
+    .logo-navbar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;  
+        display: block;       
+    }
+
+    .parent_leftmenu {
+        position: fixed;
+        top: 90px; 
+        left: 0;
+        width: 250px;
+        height: calc(100vh - 90px);
+        background-color: var(--secondary-dark);
+        display: flex;
+        flex-direction: column;
+        padding-top: 15px;
+        z-index: 900;
+        box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+    }
+    .menu li {
+        list-style: none;
+        padding: 14px 25px;
+        margin: 5px 0;
+        border-left: 4px solid transparent;
+        transition: all 0.3s ease;
+    }
+    .menu li:hover {
+        background-color: rgba(255,255,255,0.1);
+        border-left: 4px solid var(--accent-blue); 
+    }
+    .menu a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    
+    .parent_body {
+     
+        margin-left: 250px; 
+        margin-top: 90px; 
+        padding: 40px;
+        min-height: calc(100vh - 90px);
+  background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        max-width: 800px;
+        margin-right: 40px;
+    }
+    .parent-header {
+        font-weight: 700;
+        font-size: 32px;
+        color: var(--secondary-dark);
+        margin-bottom: 30px;
+        border-bottom: 2px solid rgba(0, 71, 171, 0.1);
+        padding-bottom: 15px;
+    }
+
+
+    .form-container {
+        padding: 20px 0;
+    }
+    .form-group {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
+    .form-group label {
+        width: 220px; 
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--secondary-dark);
+    }
+    .form-group input[type="text"],
+    .form-group select {
+        padding: 10px 15px;
+        width: 300px;
+        border: 2px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        -webkit-appearance: none; 
+        -moz-appearance: none;
+        appearance: none;
+    }
+    .form-group select {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%230047ab" d="M7 10l5 5 5-5z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        padding-right: 30px;
+    }
+    .form-group input[type="text"]:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: var(--accent-blue);
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    }
+    
+    .note-text {
+        font-size: 14px;
+        color: #666;
+        margin-top: 10px;
+        margin-bottom: 25px;
+        margin-left: 220px; 
+    }
+
+    input[type="submit"] {
+        background-color: var(--primary-dark);
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+        margin-left: 220px; 
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+<body>
+    <form action="studentmarks.html">
+        <div class="logo-slide">
+            <div class="logo-navbar">
+                <img src="navbarr.jpg" alt="Logo of AUREVIA UNIVERSITY">
+            </div>
+            
+            <div class="parent_leftmenu">
+                <nav class="menu">
+                    <li><a href="Admin.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                    <li><a href="student.html"><i class="fa-solid fa-user"></i> Students</a></li>
+                    <li><a href="Marks.html"><i class="fa-solid fa-chart-simple"></i> Marks</a></li>
+                    <li><a href="Attendanc.html"><i class="fa-solid fa-calendar-days"></i> Attendance</a></li>
+                    <li><a href="Syllabus.html"><i class="fa-solid fa-book-open"></i> Syllabus Mapping</a></li>
+                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>  
+                </nav>
+            </div>
+            
+            <div class="parent_body">
+                <div class="parent-header">
+                    Check the Marks Of Students In Exams
+                    <hr>
+                </div>
+                
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="Id">Enter ID:</label>
+                        <input type="text" id="Id" placeholder="University ID" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Name">Enter Name Of Student:</label>
+                        <input type="text" id="Name" placeholder="Student Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="branch">Select the branch:</label>
+                        <select name="branch" id="branch">
+                            <option value="CSE">CSE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="MECH">MECH</option>
+                            <option value="CIVIL">CIVIL</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Term">Select the Semester:</label>
+                        <select name="Term" id="Term">
+                            <option value="Odd">Odd Sem</option>
+                            <option value="Even">Even Sem</option>
+                            <option value="summer">Summer Term</option>
+                        </select>
+                    </div>
+
+                    <p class="note-text"><b>Note:</b> If the selected Semester is not available, it will show the <b>previous</b> semester marks</p>
+                    
+                    <input type="submit" value="Enter">
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

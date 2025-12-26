@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Classes | Teacher Panel</title>
+
+    <style>
+        :root {
+            --primary: #1924a1;
+            --primary-dark: #080f56;
+            --light-bg: #e6f7f9;
+            --white: #ffffff;
+            --text: #05030c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: var(--light-bg);
+            color: var(--text);
+        }
+
+        /* TOPBAR */
+        .topbar {
+            background: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .topbar img {
+            width: 60px;
+            height: 52px;
+            margin-right: 12px;
+        }
+
+        .topbar h2 {
+            color: var(--white);
+            font-weight: 400;
+        }
+
+        /* MAIN LAYOUT */
+        .wrapper {
+            display: flex;
+            min-height: calc(100vh - 68px);
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 200px;
+            background: var(--primary);
+            padding: 20px 0;
+            color: white;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            font-size: 15px;
+        }
+
+        .sidebar a:hover {
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        /* MAIN CONTENT */
+        .main {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-title {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .desc {
+            color: #555;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* CARD */
+        .form-card {
+            width: 100%;
+            max-width: 600px;
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary-dark);
+            box-shadow: 0 2px 7px rgba(0,0,0,0.1);
+        }
+
+        /* INPUTS */
+        label {
+            display: block;
+            margin: 12px 0 6px;
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+
+        select, input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        /* BUTTON */
+        .submit-btn {
+            margin-top: 20px;
+            width: 100%;
+            padding: 14px;
+            background: var(--primary-dark);
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <img src="AUREVIE LOGO.png">
+        <h2>AUREVIA UNIVERSITY</h2>
+    </div>
+
+    <div class="wrapper">
+        <nav class="sidebar">
+            <a href="teachprof.html">Profile</a><hr>
+            <a href="sturecords.html">student records</a><hr>
+            <a href="teacherattendance.html">Attendance</a><hr>
+            <a href="postingattendance.html">post attendance</a><hr>
+            <a href="grading.html">grade assignments</a><hr>
+            <a href="scheduleclasses.html">schedule classes</a><hr>
+            <a href="conversate.html">conversate</a><hr>
+            <a href="logout.html">Logout</a><hr>
+        </nav>
+        <main class="main">
+            <div class="header-title">Schedule Classes</div>
+            <div class="desc">Create class schedules by selecting subject, time, venue, and date.</div>
+
+            <div class="form-card">
+
+                <label>Select Class</label>
+                <select>
+                    <option>Select Class</option>
+                    <option>CSE - A</option>
+                    <option>CSE - B</option>
+                    <option>IT - A</option>
+                    <option>AIML - A</option>
+                </select>
+
+                <label>Subject</label>
+                <select>
+                    <option>Select Subject</option>
+                    <option>Mathematics</option>
+                    <option>Data Structures</option>
+                    <option>Operating Systems</option>
+                    <option>DBMS</option>
+                </select>
+
+                <label>Date</label>
+                <input type="date">
+
+                <label>Start Time</label>
+                <input type="time">
+
+                <label>End Time</label>
+                <input type="time">
+
+                <label>Classroom / Venue</label>
+                <input type="text" placeholder="Enter room number">
+
+                <button class="submit-btn">Schedule Class</button>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

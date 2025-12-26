@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | KL ERP</title>
+    <style>
+        :root {
+            --primary: #1924a1;
+            --primary-dark: #080f56;
+            --light-bg: #e6f7f9;
+            --white: #ffffff;
+            --text: #05030c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: var(--light-bg);
+            color: var(--text);
+        }
+
+        .topbar {
+            background: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            padding: 8px 20px;
+        }
+
+        .topbar img {
+            width: 60px;
+            height: 52px;
+            margin-right: 12px;
+        }
+
+        .topbar h2 {
+            color: var(--white);
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .wrapper {
+            display: flex;
+            min-height: calc(100vh - 68px);
+        }
+
+        .sidebar {
+            width: 200px;
+            background: var(--primary);
+            padding: 20px 0;
+            color: white;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            font-size: 15px;
+            transition: .2s;
+        }
+
+        .sidebar a:hover {
+            background: rgba(0, 0, 0, .1);
+        }
+
+        .main {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .admin-header {
+            font-size: 1.7rem;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+        }
+
+        .admin-desc {
+            margin-bottom: 18px;
+            color: #555;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            margin-top: 16px;
+            width: 100%;
+            max-width: 860px;
+        }
+        .card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+            border-left: 5px solid var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            max-width: 300px; 
+        }
+
+        .card h4 {
+            margin-bottom: 6px;
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+        }
+        .card img.icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="topbar">
+    <img src="AUREVIE LOGO.png" alt="KL Logo">
+    <h2>AUREVIA UNIVERSITY</h2>
+</div>
+<div class="wrapper">
+    <nav class="sidebar">
+        <a href="adminstratordash.html">Dashboard</a><hr>
+        <a href="erpsettings.html">ERP Settings</a><hr>
+        <a href="userroles.html">User Roles</a><hr>
+        <a href="attendancemonitor.html">Attendance Monitor</a><hr>
+        <a href="resourcemanage.html">Resource Management</a><hr>
+        <a href="reports.html">Reports</a><hr>
+        <a href="communication.html">Communications</a><hr>
+        <a href="logout.html">Logout</a><hr>
+    </nav>
+    <main class="main">
+        <div class="admin-header">Welcome, Admin</div>
+        <div class="admin-desc">
+            Configure ERP system, manage users, oversee academic and institutional operations.
+        </div>
+        <div class="cards">
+            <div class="card">
+                <div>
+                    <h4>Administrator</h4>
+                </div>
+                <img src="administrator.jpeg" 
+                     alt="Not Found" class="icon">
+            </div>
+
+        </div>
+
+    </main>
+</div>
+</body>
+</html>

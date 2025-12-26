@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Roles | Admin Panel</title>
+
+    <style>
+        :root {
+            --primary: #1924a1;
+            --primary-dark: #080f56;
+            --light-bg: #e6f7f9;
+            --white: #ffffff;
+            --text: #05030c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: var(--light-bg);
+            color: var(--text);
+        }
+
+        .topbar {
+            background: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .topbar img {
+            width: 60px;
+            height: 52px;
+            margin-right: 12px;
+        }
+
+        .topbar h2 {
+            color: var(--white);
+            font-weight: 400;
+        }
+
+        .wrapper {
+            display: flex;
+            min-height: calc(100vh - 68px);
+        }
+
+        .sidebar {
+            width: 200px;
+            background: var(--primary);
+            padding: 20px 0;
+            color: white;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            font-size: 15px;
+        }
+
+        .sidebar a:hover {
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        .main {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-title {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .desc {
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .cards {
+            width: 100%;
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary-dark);
+            box-shadow: 0 2px 7px rgba(0,0,0,0.1);
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #444;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topbar">
+        <img src="AUREVIE LOGO.png">
+        <h2>AUREVIA UNIVERSITY</h2>
+    </div>
+
+    <div class="wrapper">
+        <nav class="sidebar">
+            <a href="adminstratordash.html">Dashboard</a><hr>
+            <a href="erpsettings.html">ERP Settings</a><hr>
+            <a href="userroles.html">User Roles</a><hr>
+            <a href="attendancemonitor.html">Attendance Monitor</a><hr>
+            <a href="resourcemanage.html">Resource Management</a><hr>
+            <a href="reports.html">Reports</a><hr>
+            <a href="communication.html">Communications</a><hr>
+            <a href="logout.html">Logout</a><hr>
+        </nav>
+
+        <main class="main">
+
+            <div class="header-title">User Roles</div>
+            <div class="desc">Define responsibilities, privileges, and access controls for all ERP users.</div>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Administrator</h3>
+                    <p>Full system access. Can modify modules, manage users, view reports, and configure ERP.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Teacher</h3>
+                    <p>Access to attendance, grading, class schedules, student records, and communication tools.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Student</h3>
+                    <p>Can view timetable, attendance, results, submit assignments, and receive notifications.</p>
+                </div>
+
+                <div class="card">
+                    <h3>HOD / Department Head</h3>
+                    <p>Manage faculty, departmental schedules, class performance analytics, and approvals.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Non-Teaching Staff</h3>
+                    <p>Handles admin tasks like fees, transport, hostel, and certificate processing.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Parents</h3>
+                    <p>View student progress, attendance reports, and receive important academic updates.</p>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>

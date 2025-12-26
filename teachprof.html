@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | KL ERP</title>
+    <style>
+        :root {
+          --primary: #1924a1;
+            --primary-dark: #080f56;
+            --light-bg: #e6f7f9;
+            --white: #ffffff;
+            --text: #05030c;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background: var(--light-bg);
+            color: var(--text);
+        }
+        .topbar {
+            background: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            padding: 8px 20px;
+        }
+        .topbar img {
+            width: 60px;
+            height: 52px;
+            margin-right: 12px;
+        }
+        .topbar h2 {
+            color: var(--white);
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        .wrapper {
+            display: flex;
+            min-height: calc(100vh - 68px);
+        }
+        .sidebar {
+            width: 200px;
+            background: var(--primary);
+            padding: 20px 0;
+        }
+        .sidebar a {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 24px;
+            font-size: 15px;
+            transition: .2s;
+        }
+        .sidebar a:hover {
+            background: rgba(0, 0, 0, .1);
+        }
+        .main {
+            flex: 1;
+            padding: 30px;
+        }
+        fieldset {
+            border: 1px solid var(--primary-dark);
+            border-radius: 8px;
+            padding: 25px 30px;
+            max-width: 500px;
+            margin: auto;
+            background: var(--white);
+        }
+        legend {
+            padding: 0 8px;
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+        .pic-box {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .pic-box img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-dark);
+        }
+        .row {
+            margin: 12px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .row label {
+            font-weight: 600;
+        }
+        .row span {
+            color: #140d4e;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <img src="AUREVIE LOGO.png" alt="KL Logo">
+        <h2>AUREVIA UNIVERSITY &nbsp;·&nbsp; Student ERP</h2>
+    </div>
+    <div class="wrapper">
+        <nav class="sidebar">
+            <a href="teachprof.html">Profile</a><hr>
+            <a href="sturecords.html">student records</a><hr>
+            <a href="teacherattendance.html">Attendance</a><hr>
+            <a href="postingattendance.html">post attendance</a><hr>
+            <a href="grading.html">grade assignments</a><hr>
+            <a href="scheduleclasses.html">schedule classes</a><hr>
+            <a href="conversate.html">conversate</a><hr>
+            <a href="logout.html">Logout</a><hr>
+        </nav>
+        <main class="main">
+            <fieldset>
+                <legend>Teacher Profile</legend>
+                <div class="pic-box">
+                </div>
+                <div class="row">
+                    <label>Name:</label>
+                    <span>uzma</span>
+                </div>
+
+                <div class="row">
+                    <label>ID Number:</label>
+                    <span>6620</span>
+                </div>
+
+                <div class="row">
+                    <label>Email:</label>
+                    <span>6620@AUREVIA.in</span>
+                </div>
+                <div class="row">
+                    <label>Phone Number:</label>
+                    <span>9645567902</span>
+                </div>
+            </fieldset>
+        </main>
+    </div>
+</body>
+</html>

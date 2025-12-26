@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational ERP Admin Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    :root {
+        --primary-dark: #0047ab; 
+        --secondary-dark: #0d1e4c;
+        --sidebar-bg: #1c3160; 
+        --text-light: #f0f7ff;
+        --accent-blue: #007bff;
+        --bg-light: #e9f0f9;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+    }
+
+    body {
+        background: var(--bg-light);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px; 
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .header img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        display: block; 
+    }
+    .parent_leftmenu {
+        position: fixed;
+        top: 80px; 
+        left: 0;
+        width: 260px;
+        height: calc(100vh - 80px); 
+        background: var(--secondary-dark);
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+        border-top-right-radius: 20px;
+        z-index: 900;
+    }
+
+    .menu li {
+        list-style: none;
+        margin: 5px 0;
+    }
+
+    .menu a {
+        color: var(--text-light);
+        padding: 15px 25px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: background 0.3s, border-left 0.3s, color 0.3s;
+        border-left: 4px solid transparent;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+        background: rgba(255,255,255,0.15);
+        border-left: 4px solid var(--accent-blue);
+        color: #ffffff;
+    }
+
+    .parent_body {
+        margin-left: 260px; 
+        margin-top: 80px; 
+        padding: 40px;
+        width: 100%;
+        transition: margin-left 0.3s, margin-top 0.3s; 
+    }
+
+    .parent-header {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--secondary-dark);
+        margin-bottom: 35px;
+        letter-spacing: 0.5px;
+        border-bottom: 2px solid rgba(0, 71, 171, 0.1);
+        padding-bottom: 15px;
+    }
+
+    .blocks-card {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 30px;
+        max-width: 1200px;
+        margin-top: 20px;
+    }
+
+    .card {
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: 0.3s ease-in-out;
+        border-left: 5px solid var(--accent-blue);
+        cursor: pointer;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h2 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #667788;
+        text-transform: uppercase;
+    }
+
+    .card p {
+        font-size: 30px;
+        font-weight: 800;
+        margin-top: 8px;
+        color: var(--primary-dark);
+    }
+
+    .card i {
+        font-size: 45px;
+        color: var(--accent-blue);
+        opacity: 0.9;
+    }
+    @media (max-width: 992px) {
+        .parent_leftmenu {
+            width: 100%;
+            height: auto;
+            position: relative;
+            top: 0;
+            border-radius: 0;
+            padding: 10px 0;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .menu li {
+            margin: 0;
+        }
+
+        .menu a {
+            padding: 10px 15px;
+            border-left: none;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .menu a:hover,
+        .menu a.active {
+            border-left: none;
+            border-bottom: 3px solid var(--accent-blue);
+        }
+
+    
+        .parent_body {
+            margin-left: 0;
+            margin-top: 0;
+            padding-top: 20px; 
+        }
+
+        .header {
+             height: 60px;
+        }
+        .parent_leftmenu {
+            top: 60px;
+        }
+        .parent_body {
+            margin-top: 60px;
+        }
+
+        .blocks-card {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<body>
+    <header class="header">
+        <img src="navbarr.jpg" alt="Aurevia University Header Image">
+    </header>
+
+    <div class="parent_leftmenu">
+        <nav class="menu">
+            <li><a href="Admin.html" class="active"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+            <li><a href="student.html"><i class="fa-solid fa-user"></i> Students</a></li>
+            <li><a href="Marks.html"><i class="fa-solid fa-chart-simple"></i> Marks</a></li>
+            <li><a href="Attendanc.html"><i class="fa-solid fa-calendar"></i> Attendance</a></li>
+            <li><a href="Syllabus.html"><i class="fa-solid fa-book-open"></i> Syllabus Mapping</a></li>
+            <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+        </nav>
+    </div>
+
+    <div class="parent_body">
+        <div class="parent-header">Dashboard</div>
+
+        <div class="blocks-card">
+            <div class="card">
+                <div>
+                    <h2>Total Students</h2>
+                    <p>25,000</p>
+                </div>
+                <i class="fa-solid fa-user-graduate"></i>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h2>Total Faculty</h2>
+                    <p>1,500</p>
+                </div>
+                <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h2>Total Courses</h2>
+                    <p>150</p>
+                </div>
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h2>Total Fees</h2>
+                    <p>$ 670 Million</p>
+                </div>
+                <i class="fa-solid fa-money-bill-transfer"></i>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

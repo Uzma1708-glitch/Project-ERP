@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational ERP Admin Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #eaf4ff;
+        }
+
+        .logo-navbar img {
+             width: 100%;
+             height: auto;         
+             object-fit: cover;  
+            display: block;       
+        }
+
+        .parent_leftmenu {
+            position: fixed;
+            top: 90px;
+            left: 0;
+            width: 250px;
+            height: calc(100vh - 90px);
+            background-color: #0d1e4c;
+            display: flex;
+            flex-direction: column;
+            padding-top: 15px;
+        }
+        .menu li {
+            padding: 14px 25px;
+            margin: 5px 0;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .menu li:hover {
+            background-color: #1a3a8d;
+        }
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+         .parent_body {
+            margin-left: 230px;
+            margin-top: 50px;
+            padding: 30px;
+            
+        }
+        .parent-header {
+            font-weight: 70;
+            font-size: 18px;
+            color: #000000;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        td pre {
+            font-family: inherit;
+            white-space: pre-wrap;
+            text-align: center;
+            margin: 0;
+        }
+         h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        hr {
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            background-color: lightgray;
+            text-align: center;
+            border: 2px solid black;
+            width: 70%;
+        }
+        
+</style>
+<body>
+    <div class="logo-slide">
+        <div class="logo-navbar">
+              <img src="navbarr.jpg" alt="Logo of AUREVIA UNIVERSITY">
+        </div>
+        <br><br>
+        <div class="parent_leftmenu">
+          <nav class="menu">
+                <li><a href="Admin.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                <br>
+                <li><a href="student.html"><i class="fa-solid fa-user"></i> Students</a></li>
+                <br>
+                <li><a href="Marks.html"><i class="fa-solid fa-chart-simple"></i> Marks</a></li>
+                <br>
+                <li><a href="Attendanc.html"><i class="fa-solid fa-calendar"></i> Attendance</a></li>
+                <br>
+                <li><a href="Syllabus.html"><i class="fa-solid fa-book"></i> Syllabus Mapping</a></li>
+                <br>
+                <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>  
+                <br>
+            </nav>
+        </div>
+       <div class="parent_body" >
+            <div class="parent-header">
+                <h1>--Biometric Table--</h1>
+    <p>This table displays your biometric data for the selected month and year.</p>
+    <hr>
+            </div>
+            <div class="table" >
+                    <table border="2" cellpadding="5" cellspacing="1" style=" text-align: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); justify-content: center;">
+                           <tr>
+                <th>Date</th>
+                <th>University ID</th>
+                <th>Day</th>
+                <th>Check-In Time</th>
+                <th>Check-Out Time</th>
+                <th>Remarks</th>
+            </tr>
+            <tr>
+                <td>01-06-2024</td>
+                <td>KL2021001</td>
+                <td>Monday</td>
+                <td>09:00 AM</td>
+                <td>05:00 PM</td>
+                <td>Present</td>
+            </tr>
+            <tr>
+                <td>02-06-2024</td>
+                <td>KL2021001</td>
+                <td>Tuesday</td>
+                <td>--</td>
+                <td>--</td>
+                <td>Holiday</td>
+            </tr>
+            <tr>
+                <td>03-06-2024</td>
+                <td>KL2021001</td>
+                <td>Wednesday</td>
+                <td>09:05 AM</td>
+                <td>04:55 PM</td>
+                <td>Present</td>
+            </tr>
+            <tr>
+                <td>04-06-2024</td>
+                <td>KL2021001</td>
+                <td>Thursday</td>
+                <td>09:00 AM</td>
+                <td>05:00 PM</td>
+                <td>Present</td>
+            </tr>
+            <tr>
+                <td>05-06-2024</td>
+                <td>KL2021001</td>
+                <td>Friday</td>
+                <td>09:10 AM</td>
+                <td>05:05 PM</td>
+                <td>Present</td>
+            </tr>
+            <tr>
+                <td>06-06-2024</td>
+                <td>KL2021001</td>
+                <td>Saturday</td>
+                <td>09:10 AM</td>
+                <td>05:05 PM</td>
+                <td>Present</td>
+            </tr>
+            <tr>
+                <td>07-06-2024</td>
+                <td>KL2021001</td>
+                <td>Sunday</td>
+                <td>--</td>
+                <td>--</td>
+                <td>Leave</td>
+            </tr>
+                    </table>
+            </div>
+       </div>
+    </div>
+</body>
+</html>

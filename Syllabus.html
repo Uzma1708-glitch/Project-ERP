@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational ERP Admin Portal - Syllabus Mapping</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<style>
+   
+    :root {
+        --primary-dark: #1f3f6c;
+        --secondary-dark: #0d1e4c; 
+        --accent-blue: #007bff; 
+        --bg-light: #f5f8ff; 
+        --card-bg: #ffffff;
+        --border-color: #dee2e6;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif; 
+    }
+
+    body {
+        background-color: var(--bg-light);
+    }
+
+    .logo-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 90px;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        background-color: var(--card-bg);
+    }
+    .logo-navbar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+   
+    .parent_leftmenu {
+        position: fixed;
+        top: 90px;
+        left: 0;
+        width: 250px;
+        height: calc(100vh - 90px);
+        background-color: var(--primary-dark); 
+        display: flex;
+        flex-direction: column;
+        padding-top: 15px;
+        z-index: 900;
+        box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+    }
+    .menu li {
+        list-style: none;
+        padding: 14px 25px;
+        margin: 5px 0;
+        border-left: 4px solid transparent;
+        transition: all 0.3s ease;
+    }
+    .menu li:hover {
+        background-color: rgba(255,255,255,0.15);
+        border-left: 4px solid var(--accent-blue);
+    }
+    
+    .menu li.active {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-left: 4px solid var(--accent-blue);
+    }
+    .menu a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .parent_body {
+        margin-left: 250px;
+        margin-top: 90px;
+        padding: 40px;
+        min-height: calc(100vh - 90px);
+        width: calc(100% - 250px);
+    }
+    .parent-header {
+        font-weight: 700;
+        font-size: 36px;
+        color: var(--secondary-dark);
+        margin-bottom: 35px;
+        text-align: left;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--border-color);
+    }
+    .parent-header h1 { 
+        font-size: 36px;
+        color: var(--secondary-dark);
+        text-align: left;
+    }
+    .parent-header hr {
+        display: none; 
+    }
+
+    
+    .table-wrapper {
+        overflow-x: auto; 
+        margin-top: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .data-table {
+        width: 100%;
+        min-width: 900px; 
+        border-collapse: separate;
+        border-spacing: 0;
+        background-color: var(--card-bg);
+    }
+
+    .data-table th, .data-table td {
+        padding: 15px 10px;
+        border-bottom: 1px solid #f0f0f0;
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .data-table th {
+        background-color: #e9ecef;
+        color: var(--secondary-dark);
+        font-weight: 700;
+        text-transform: uppercase;
+        border-top: none;
+    }
+    
+ 
+    .data-table tr:first-child th:first-child { border-top-left-radius: 8px; }
+    .data-table tr:first-child th:last-child { border-top-right-radius: 8px; }
+
+    .data-table tr:nth-child(even) {
+        background-color: #fcfdff;
+    }
+    .data-table tr:hover {
+        background-color: #e2f0ff; 
+    }
+
+    .data-table td a {
+        color: var(--accent-blue);
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.2s;
+        word-break: break-word; 
+    }
+
+    .data-table td a:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+    }
+
+    
+    @media (max-width: 768px) {
+        .parent_leftmenu {
+           
+            width: 0;
+            display: none;
+        }
+
+        .parent_body {
+           
+            margin-left: 0;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .parent-header {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+        .parent-header h1 {
+            font-size: 28px;
+        }
+        
+        
+        .data-table th, .data-table td {
+            padding: 10px 8px;
+            font-size: 11px;
+        }
+    }
+</style>
+<body>
+    <div class="logo-slide">
+        <div class="logo-navbar">
+        
+            <img src="navbarr.jpg"
+                 alt="Logo of AUREVIA UNIVERSITY"
+                 onerror="this.onerror=null; this.src='https://placehold.co/1200x90/1f3f6c/ffffff?text=AUREVIA+UNIVERSITY+ERP';">
+        </div>
+
+        
+        <div class="parent_leftmenu">
+            <nav class="menu">
+                <li><a href="Admin.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+            
+                <li><a href="student.html"><i class="fa-solid fa-user"></i> Students</a></li>
+                <li><a href="Marks.html"><i class="fa-solid fa-square-poll-vertical"></i> Marks</a></li>
+                <li><a href="Attendanc.html"><i class="fa-solid fa-calendar-check"></i> Attendance</a></li>
+                <li class="active"><a href="Syllabus.html"><i class="fa-solid fa-book-atlas"></i> Syllabus Mapping</a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+            </nav>
+        </div>
+
+     
+        <div class="parent_body" >
+            <div class="parent-header">
+               
+                <h1>Syllabus for Available Courses</h1>
+            </div>
+            
+           
+            <div class="table-wrapper" >
+               
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Academic Year</th>
+                            <th>Semester</th>
+                            <th>Course Code</th>
+                            <th>Course Name</th>
+                            <th>Course HandOuts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2025-2026</td>
+                            <td>Odd Sem</td>
+                            <td>25UC0017</td>
+                            <td>VEDIC MATHEMATICS</td>
+                            
+                            <td><a href="VEDIC MATHEMATICS COURSE HANDOUT_compressed.pdf">Vedic Mathematics</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2025-2026</td>
+                            <td>Odd Sem</td>
+                            <td>25UC1102</td>
+                            <td>LANGUAGE SKILLS</td>
+                            <td><a href="Language.pdf">Language Skills - English </a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>2025-2026</td>
+                            <td>Odd Sem</td>
+                            <td>25UC1203</td>
+                            <td>DESIGN THINKING FOR INNOVATION</td>
+                            <td><a href="25UC1203 Course Handout.pdf">DTI</a></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>2025-2026</td>
+                            <td>Odd Sem</td>
+                            <td>25SC1101</td>
+                            <td>PROBLEM SOLVING THROUGH C</td>
+                            <td><a href="PROGRAMMING-C.pdf">Programming - C</a></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>2025-2026</td>
+                            <td>Odd Sem</td>
+                            <td>25SC1101</td>
+                            <td>PROBLEM SOLVING THROUGH JAVA</td>
+                            <td><a href="java syllabus.pdf">Java Programming</a></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>2025-2026</td>
+                            <td>Odd Sem</td>
+                            <td>25SC1101</td>
+                            <td>FULL STACK WEB DELOPMENT</td>
+                            <td><a href="WEB DEVLOP.pdf">Full Stack</a></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>2025-2026</td>
+                            <td>Odd Sem</td>
+                            <td>25MT1102</td>
+                            <td>DISCRETE MATHEMATICS</td>
+                            <td><a href="Approved Course Hadout 25-26.pdf">Discrete Mathematics</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

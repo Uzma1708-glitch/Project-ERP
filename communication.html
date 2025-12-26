@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communications | ERP</title>
+
+    <style>
+        :root {
+            --primary: #1924a1;
+            --primary-dark: #080f56;
+            --light-bg: #e6f7f9;
+            --white: #ffffff;
+            --text: #05030c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: var(--light-bg);
+            color: var(--text);
+        }
+
+        .topbar {
+            background: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .topbar img {
+            width: 60px;
+            height: 52px;
+            margin-right: 12px;
+        }
+
+        .topbar h2 {
+            color: var(--white);
+            font-weight: 400;
+        }
+
+        .wrapper {
+            display: flex;
+            min-height: calc(100vh - 68px);
+        }
+
+        .sidebar {
+            width: 200px;
+            background: var(--primary);
+            padding: 20px 0;
+            color: white;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            font-size: 15px;
+        }
+
+        .sidebar a:hover {
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        .main {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .header-title {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .section-box {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary-dark);
+            margin-bottom: 25px;
+        }
+
+        .section-box h3 {
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+
+        textarea, select, input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 18px;
+            background: var(--primary-dark);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: var(--primary);
+        }
+        .log {
+            padding: 12px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 3px solid var(--primary);
+        }
+    </style>
+</head>`
+<body>
+    <div class="topbar">
+        <img src="AUREVIE LOGO.png">
+        <h2>AUREVIA UNIVERSITY</h2>
+    </div>
+    <div class="wrapper">
+        <nav class="sidebar">
+            <a href="adminstratordash.html">Dashboard</a><hr>
+            <a href="erpsettings.html">ERP Settings</a><hr>
+            <a href="userroles.html">User Roles</a><hr>
+            <a href="attendancemonitor.html">Attendance Monitor</a><hr>
+            <a href="resourcemanagement.html">Resource Management</a><hr>
+            <a href="reports.html">Reports</a><hr>
+            <a href="communications.html"><b>Communications</b></a><hr>
+            <a href="logout.html">Logout</a><hr>
+        </nav>
+        <main class="main">
+            <div class="header-title">Communications</div>
+            <div class="section-box">
+                <h3>Post Announcement</h3>
+                <select>
+                    <option>Select Audience</option>
+                    <option>All Students</option>
+                    <option>All Teachers</option>
+                    <option>Specific Department</option>
+                    <option>Custom Group</option>
+                </select>
+                <textarea rows="4" placeholder="Type announcement message..."></textarea>
+                <button>Post Announcement</button>
+            </div>
+            <div class="section-box">
+                <h3>Send Notification</h3>
+                <select>
+                    <option>Select Alert Type</option>
+                    <option>Email</option>
+                    <option>SMS</option>
+                    <option>In-App Notification</option>
+                </select>
+                <textarea rows="3" placeholder="Write your message..."></textarea>
+                <button>Send Notification</button>
+            </div>
+            <div class="section-box">
+                <h3>Message Logs</h3>
+                <div class="log">✔ Email sent to All Teachers about Timetable Update</div>
+                <div class="log">✔ SMS sent to 1st Year Students: "Fee deadline reminder"</div>
+                <div class="log">✔ Announcement posted to All Users: "Holiday on Friday"</div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
